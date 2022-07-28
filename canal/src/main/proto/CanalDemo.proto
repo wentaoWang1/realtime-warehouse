@@ -1,0 +1,14 @@
+syntax = "proto3"; //指定使用proto3 语法，默认是proto2语法
+option java_package = "com.protobuf"; //指定扫描proto文件生成的class包名
+option java_outer_classname = "CanalModel"; //指定扫描proto文件生成的class文件名
+//指定对象 内容
+message RowData{
+    string logfileName = 1; //定义 字段的：类型 字段名 默认值
+    int64 logfileOffset = 2;
+    string eventType = 3;
+    string schemaName = 4;
+    string tableName = 5;
+    uint64 executeTime = 6;
+
+    map<string, string> columns = 7;
+}
